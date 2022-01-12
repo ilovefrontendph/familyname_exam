@@ -1,0 +1,48 @@
+[debug] [2022-01-12T00:27:36.811Z] ----------------------------------------------------------------------
+[debug] [2022-01-12T00:27:36.814Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\mckn\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2022-01-12T00:27:36.815Z] CLI Version:   10.0.1
+[debug] [2022-01-12T00:27:36.816Z] Platform:      win32
+[debug] [2022-01-12T00:27:36.818Z] Node Version:  v16.13.2
+[debug] [2022-01-12T00:27:36.821Z] Time:          Wed Jan 12 2022 08:27:36 GMT+0800 (Taipei Standard Time)
+[debug] [2022-01-12T00:27:36.821Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-01-12T00:27:36.980Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-01-12T00:27:36.980Z] > authorizing via signed-in user (masma_180000002118@uic.edu.ph)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\mckn\familyname_exam
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2022-01-12T00:27:59.243Z] Using project from CLI flag: familynameexam
+[debug] [2022-01-12T00:27:59.249Z] > refreshing access token with scopes: []
+[debug] [2022-01-12T00:27:59.250Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-01-12T00:27:59.490Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","date":"Wed, 12 Jan 2022 00:27:56 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-01-12T00:27:59.506Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/familynameexam [none]
+[debug] [2022-01-12T00:28:00.000Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/familynameexam 200
+[debug] [2022-01-12T00:28:00.001Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/familynameexam {"projectId":"familynameexam","projectNumber":"789538371913","displayName":"familynameexam","name":"projects/familynameexam","resources":{"hostingSite":"familynameexam","storageBucket":"familynameexam.appspot.com","locationId":"asia-south1"},"state":"ACTIVE"}
+[info] i  Using project familynameexam (familynameexam) 
+[info] 
+=== Hosting Setup
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
