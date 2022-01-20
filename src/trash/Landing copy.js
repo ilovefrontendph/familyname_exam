@@ -120,6 +120,16 @@ function Landing() {
                 })
               : "Loading"}
           </div>
+          <iframe
+            width="600"
+            height="500"
+            id="gmap_canvas"
+            src="https://maps.google.com/maps?ll=7.0699417,125.6001476&q=University of the Immaculate Conception - Main&t=k&z=18&ie=UTF8&iwloc=&output=embed"
+            frameborder="0"
+            scrolling="no"
+            marginheight="0"
+            marginwidth="0"
+          ></iframe>
           <div className="bg-[#FDC122] p-[20px] self-center mt-[40px] flex justify-between w-[400px] pt-[40px]">
             <input
               value={name}
