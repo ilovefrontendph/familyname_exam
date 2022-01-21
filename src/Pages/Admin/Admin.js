@@ -231,15 +231,25 @@ function Admin() {
                                   <div className="text-left">{user.email}</div>
                                 </td>
                                 <td className="p-2 whitespace-nowrap">
-                                  {user.typeofapplication}
+                                  {user.application
+                                    ? user.typeofapplication
+                                    : "NO APPLICATION"}
                                 </td>
                                 <td className="p-2 whitespace-nowrap">
-                                  <div className="mx-auto text-center hover:opacity-80 bg-[#5dcfff] cursor-pointer w-[50px] rounded-lg p-1 text-white hover:shadow-lg">
+                                  <div
+                                    className={`mx-auto text-center   w-[50px] rounded-lg p-1 text-white  ${
+                                      !user.application
+                                        ? "bg-gray-400"
+                                        : "bg-[#5dcfff] hover:opacity-80 hover:shadow-lg cursor-pointer"
+                                    }`}
+                                  >
                                     show
                                   </div>
                                 </td>
                                 <td className="p-2 whitespace-nowrap uppercase">
-                                  {user.status}
+                                  {user.application
+                                    ? user.status
+                                    : "NO APPLICATION"}
                                 </td>
                               </tr>
                             );
