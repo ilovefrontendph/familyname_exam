@@ -29,7 +29,7 @@ function Admin() {
   const [searchTerm, setSearchTerm] = useState("");
   const [filterTerm, setFilterTerm] = useState(false);
   const [checked, setChecked] = useState({
-    new: true,
+    new: false,
     renewal: false,
     duplicate: false,
   });
@@ -188,20 +188,22 @@ function Admin() {
                             if (searchTerm === "") {
                               return val;
                             }
-                            if (filterTerm) {
-                              if (
-                                val.typeofapplication.toLowerCase() ===
-                                searchTerm.toLowerCase()
-                              ) {
-                                return val;
-                              }
-                            } else {
-                              if (
-                                val.firstname
-                                  .toLowerCase()
-                                  .includes(searchTerm.toLowerCase())
-                              ) {
-                                return val;
+                            if (val.application) {
+                              if (filterTerm) {
+                                if (
+                                  val.typeofapplication.toLowerCase() ===
+                                  searchTerm.toLowerCase()
+                                ) {
+                                  return val;
+                                }
+                              } else {
+                                if (
+                                  val.firstname
+                                    .toLowerCase()
+                                    .includes(searchTerm.toLowerCase())
+                                ) {
+                                  return val;
+                                }
                               }
                             }
                           })

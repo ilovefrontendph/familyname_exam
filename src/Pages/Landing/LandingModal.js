@@ -30,9 +30,16 @@ function LandingModal(props) {
     createUserWithEmailAndPassword(auth, data.email, data.password)
       .then(async (userCredential) => {
         // Signed in
+        let newFields = {
+          username: data.username,
+          email: data.email,
+          password: data.password,
+          application: false,
+        };
+        // console.log(data);
         const user = userCredential.user;
         console.log(user);
-        await addDoc(collection(firestore, "Users"), data).then(() => {
+        await addDoc(collection(firestore, "Users"), newFields).then(() => {
           toast("User added successfully");
           setValue("username", "");
           setValue("email", "");
