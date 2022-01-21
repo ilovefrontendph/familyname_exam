@@ -28,6 +28,11 @@ function Admin() {
   const [showDetails, setShowDetails] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [filterTerm, setFilterTerm] = useState(false);
+  const [checked, setChecked] = useState({
+    new: true,
+    renewal: false,
+    duplicate: false,
+  });
 
   //   READ
   useEffect(() => {
@@ -36,7 +41,9 @@ function Admin() {
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       setUsers(
         querySnapshot.docs.map((doc) => {
+          // if (doc.data().application === true) {
           return { id: doc.id, ...doc.data() };
+          // }
         })
       );
       setIsLoaded(true);
@@ -72,14 +79,16 @@ function Admin() {
               htmlFor="NEW"
             >
               <input
-                type="checkbox"
+                type="radio"
                 name="typeofapplication"
                 value="NEW"
                 id="NEW"
                 onClick={(e) => {
                   setFilterTerm(true);
                   setSearchTerm(e.target.value);
+                  setChecked({ [e.target.value.toLowerCase()]: true });
                 }}
+                checked={checked.new}
               />
               <div>NEW</div>
             </label>
@@ -88,14 +97,16 @@ function Admin() {
               htmlFor="RENEWAL"
             >
               <input
-                type="checkbox"
+                type="radio"
                 name="typeofapplication"
                 value="RENEWAL"
                 id="RENEWAL"
                 onClick={(e) => {
                   setFilterTerm(true);
                   setSearchTerm(e.target.value);
+                  setChecked({ [e.target.value.toLowerCase()]: true });
                 }}
+                checked={checked.renewal}
               />
               <div>RENEWAL</div>
             </label>
@@ -104,11 +115,13 @@ function Admin() {
               htmlFor="DUPLICATE"
             >
               <input
-                type="checkbox"
+                type="radio"
                 name="typeofapplication"
                 value="DUPLICATE"
                 id="DUPLICATE"
-                onChange={(e) => {
+                checked={checked.duplicate}
+                onClick={(e) => {
+                  setChecked({ [e.target.value.toLowerCase()]: true });
                   setFilterTerm(true);
                   setSearchTerm(e.target.value);
                 }}
@@ -119,6 +132,11 @@ function Admin() {
           <div
             onClick={() => {
               setSearchTerm("");
+              setChecked(() => ({
+                new: false,
+                renewal: false,
+                duplicate: false,
+              }));
               setFilterTerm(false);
             }}
             className="mx-auto text-center hover:opacity-80 bg-[#5dcfff] cursor-pointer w-full rounded-lg p-1 text-white hover:shadow-lg"
